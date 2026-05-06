@@ -57,6 +57,11 @@ jobs:
 
       - name: Debug Android structure
         run: ls -R android
+
+      - name: Check Gradle & Java versions
+        run: |
+          cd android
+          ./gradlew -version
         
       - name: Build signed release APK (verbose)
         env:
