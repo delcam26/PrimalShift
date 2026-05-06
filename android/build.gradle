@@ -23,10 +23,13 @@ allprojects {
         mavenCentral()
     }
 }
-
 subprojects {
-    tasks.withType(JavaCompile).configureEach {
-        options.release = 17
+    plugins.withId("java") {
+        java {
+            toolchain {
+                languageVersion = JavaLanguageVersion.of(17)
+            }
+        }
     }
 }
 
